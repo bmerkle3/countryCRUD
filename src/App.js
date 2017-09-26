@@ -22,12 +22,13 @@ class App extends Component {
       country_name: this.refs.country_name.value,
       language: this.refs.language.value
     };
-    var request = new Request('http://localhost3000/api/new-country', {
+    var request = new Request('http://localhost:3000/api/new-country', {
       method: 'POST',
       headers: new Headers({ 'Content-Type': 'application/json' }),
       body: JSON.stringify(data)
     });
     // more modern version of xml http request
+    console.log(request);
     fetch(request).then(function(response) {
       response.json().then(function(data) {
         console.log(data);
